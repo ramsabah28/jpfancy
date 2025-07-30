@@ -23,7 +23,7 @@ class Starter extends StatelessWidget {
               child: Image.asset('lib/assets/grafiken/cupcake_chick.png'),
             ),
             Positioned(
-              left: -300, // Intentionally overflowing to the left
+              left: -300,
               top: 500,
               child: Stack(
                 children: <Widget>[
@@ -87,7 +87,7 @@ class Starter extends StatelessWidget {
                           ),
                           const SizedBox(height: 20),
                           SizedBox(
-                            width: 180, // your desired button width
+                            width: 180,
                             child: ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
