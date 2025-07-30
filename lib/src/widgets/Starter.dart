@@ -15,7 +15,7 @@ class Starter extends StatelessWidget {
           ),
         ),
         child: Stack(
-          clipBehavior: Clip.none, // <== Allow children to overflow
+          clipBehavior: Clip.none,
           children: <Widget>[
             Positioned(
               left: 20,
