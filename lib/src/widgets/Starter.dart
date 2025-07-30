@@ -62,7 +62,27 @@ class Starter extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.white.withOpacity(0.6)),
+                        border: Border.all(
+                          color: Colors.white.withOpacity(0.6),
+                        ),
+                      ),
+
+                      child: Column(
+                        children: [
+                          const Text(
+                            "Feeling Snackish Today?",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Text(
+                            "Explore Angi’s most popular snack selection and get instantly happy.",
+                            style: TextStyle(color: Colors.white60, fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     ),
                   ),
