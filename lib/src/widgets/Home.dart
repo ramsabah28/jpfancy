@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../domain/MenuButton.dart';
 import '../domain/CategorieMenuButton.dart';
+import '../domain/BurgerCard.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -31,17 +32,26 @@ class Home extends StatelessWidget {
               height: 100,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 22),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 22,
+                ),
                 children: <Widget>[
                   CategorieMenuButton(titel: "All categories"),
-                  const SizedBox(width: 10,),
-                  MenuButton(titel: "Sallty",),
-                  const SizedBox(width: 10,),
-                  MenuButton(titel: "Sweets",),
-                  const SizedBox(width: 10,),
-                  MenuButton(titel: "Drinks",),
+                  const SizedBox(width: 10),
+                  MenuButton(titel: "Sallty"),
+                  const SizedBox(width: 10),
+                  MenuButton(titel: "Sweets"),
+                  const SizedBox(width: 10),
+                  MenuButton(titel: "Drinks"),
                 ],
               ),
+            ),
+
+            const SizedBox(height: 20),
+
+            SizedBox(
+                child: BurgerCard(),
             ),
           ],
         ),
