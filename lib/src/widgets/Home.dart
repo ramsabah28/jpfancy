@@ -15,12 +15,27 @@ class Home extends StatelessWidget {
           ),
         ),
         child: Column(
-
           children: [
             const Text(
               "Choose Your Favorite Snack",
-              style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             ),
+            const SizedBox(height: 20),
+            SizedBox(height: 100, child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              children: <Widget>[
+                Container(width: 160, color: Colors.red),
+                Container(width: 160, color: Colors.blue),
+                Container(width: 160, color: Colors.green),
+                Container(width: 160, color: Colors.yellow),
+                Container(width: 160, color: Colors.orange),
+              ],
+            )),
           ],
         ),
       ),
