@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../domain/MenuButton.dart';
+import '../domain/CategorieMenuButton.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -32,7 +33,7 @@ class Home extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 22),
                 children: <Widget>[
-                  MenuButton(titel: "All categories"),
+                  CategorieMenuButton(titel: "All categories"),
                   const SizedBox(width: 10,),
                   MenuButton(titel: "Sallty",),
                   const SizedBox(width: 10,),
