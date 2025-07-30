@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Starter extends StatelessWidget {
@@ -51,17 +52,23 @@ class Starter extends StatelessWidget {
             Center(
               child: Padding(
                 padding: EdgeInsets.only(top: 450),
-                child: Container(
-                  height: 250,
-                  width: 400,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(20),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    child: Container(
+                      height: 250,
+                      width: 400,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.white.withOpacity(0.6)),
+                      ),
+                    ),
                   ),
                 ),
               ),
-            )
-
+            ),
           ],
         ),
       ),
