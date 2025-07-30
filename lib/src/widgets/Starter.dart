@@ -79,8 +79,47 @@ class Starter extends StatelessWidget {
                           ),
                           const Text(
                             "Explore Angi’s most popular snack selection and get instantly happy.",
-                            style: TextStyle(color: Colors.white60, fontSize: 18),
+                            style: TextStyle(
+                              color: Colors.white60,
+                              fontSize: 18,
+                            ),
                             textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 20),
+                          ElevatedButton(
+                            onPressed: () {},
+
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              // Remove default padding to fit gradient container
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              backgroundColor: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                            ),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: LinearGradient(
+                                  colors: [Colors.cyan, Colors.yellow],
+                                ),
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 24,
+                                ),
+                                alignment: Alignment.center,
+                                child: const Text(
+                                  "Order Know",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ],
                       ),
