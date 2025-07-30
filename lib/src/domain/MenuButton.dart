@@ -12,7 +12,7 @@ class MenuButton extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(0),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 40),
 
         child: Container(
           decoration: BoxDecoration(

@@ -30,11 +30,14 @@ class Home extends StatelessWidget {
               height: 100,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 22),
                 children: <Widget>[
-                  MenuButton(titel: "All categories",),
+                  MenuButton(titel: "All categories"),
+                  const SizedBox(width: 10,),
                   MenuButton(titel: "Sallty",),
+                  const SizedBox(width: 10,),
                   MenuButton(titel: "Sweets",),
+                  const SizedBox(width: 10,),
                   MenuButton(titel: "Drinks",),
                 ],
               ),
