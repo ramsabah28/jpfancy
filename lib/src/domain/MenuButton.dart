@@ -3,13 +3,16 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class MenuButton extends StatelessWidget {
+  final String titel;
+
+  MenuButton({required this.titel, super.key});
+
   @override
   Widget build(BuildContext con) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
-
+      borderRadius: BorderRadius.circular(0),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
 
         child: Container(
           decoration: BoxDecoration(
@@ -24,8 +27,8 @@ class MenuButton extends StatelessWidget {
               foregroundColor: Colors.white,
             ),
 
-            child: const Text(
-              "All Categorys",
+            child: Text(
+              titel,
               style: TextStyle(fontSize: 14, color: Colors.white),
             ),
           ),
