@@ -1,6 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import '../domain/OrderButton.dart';
 
 class BurgerCard extends StatelessWidget {
   @override
@@ -41,6 +41,9 @@ class BurgerCard extends StatelessWidget {
                     Text("Delish vegan burger that test like heaven", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400)),
                     SizedBox(height: 25),
                     Text("A 13.99", style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 60),
+                    OrderButton(titel: "Add to cart"),
+
                   ],
                 ),
 
