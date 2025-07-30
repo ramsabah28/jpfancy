@@ -33,6 +33,7 @@ class CategorieMenuButton extends StatelessWidget {
                   titel,
                   style: const TextStyle(fontSize: 14, color: Colors.white),
                 ),
+                Icon(Icons.arrow_downward, size: 18, color: Colors.white),
               ],
             ),
           ),
