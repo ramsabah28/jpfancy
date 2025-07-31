@@ -65,6 +65,19 @@ class Home extends StatelessWidget {
               width: 250, // Adjust size if needed
             ),
           ),
+          SizedBox(height: 12),
+          Row(
+            children: [
+              SizedBox(
+                height: 100,
+                width: 100, // Add width constraint!
+                child: ListView(
+                  children: [Text("AA",style: TextStyle(color: Colors.white),), Text("BB"), Text("CC")],
+                ),
+              ),
+            ],
+          ),
+
         ],
       ),
     );
