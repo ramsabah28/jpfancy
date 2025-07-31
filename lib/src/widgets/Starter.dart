@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:jpfancy/src/widgets/Home.dart';
 
 class Starter extends StatelessWidget {
   @override
@@ -89,7 +90,22 @@ class Starter extends StatelessWidget {
                           SizedBox(
                             width: 180,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  //Screen switch macht not the design target!TODO: Extend and fix the switch
+                                  context,
+                                  PageRouteBuilder(
+                                    transitionDuration: Duration(milliseconds: 500),
+                                    pageBuilder: (context, animation, secondaryAnimation) =>  Home(),
+                                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                      return FadeTransition(
+                                        opacity: animation,
+                                        child: child,
+                                      );
+                                    },
+                                  ),
+                                );
+                              },
                               style: ElevatedButton.styleFrom(
                                 padding: EdgeInsets.zero,
                                 shape: RoundedRectangleBorder(
