@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../domain/MenuButton.dart';
 import '../domain/CategorieMenuButton.dart';
 import '../domain/BurgerCard.dart';
+import '../domain/SweetsCard.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -69,7 +70,6 @@ class Home extends StatelessWidget {
                     child: Stack(
                       clipBehavior: Clip.none,
                       children: [
-
                         Positioned.fill(child: BurgerCard()),
 
                         Positioned(
@@ -101,23 +101,27 @@ class Home extends StatelessWidget {
                 ],
               ),
 
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: 100,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text("AA", style: TextStyle(color: Colors.white)),
-                        Text("BB", style: TextStyle(color: Colors.white)),
-                        Text("CC", style: TextStyle(color: Colors.white)),
-                      ],
+                  Expanded(
+                    child: SizedBox(
+                      height: 300,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 5,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SweetsCard(),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ],
               ),
+
             ],
           ),
         ),
