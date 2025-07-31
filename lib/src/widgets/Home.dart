@@ -106,13 +106,13 @@ class Home extends StatelessWidget {
                 children: [
                   Expanded(
                     child: SizedBox(
-                      height: 300,
+                      height: 350,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: 5,
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(15.0),
                             child: SweetsCard(),
                           );
                         },
