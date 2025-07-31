@@ -4,81 +4,123 @@ import '../domain/CategorieMenuButton.dart';
 import '../domain/BurgerCard.dart';
 
 class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          // Background container and main UI
-          Container(
-            padding: const EdgeInsets.only(top: 70),
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("lib/assets/hintergruende/bg_mainscreen.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Column(
-              children: [
-                const Text(
-                  "Choose Your Favorite Snack",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                SizedBox(
-                  height: 100,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 25,
-                      vertical: 22,
-                    ),
-                    children: <Widget>[
-                      CategorieMenuButton(titel: "All categories"),
-                      const SizedBox(width: 10),
-                      MenuButton(titel: "Sallty"),
-                      const SizedBox(width: 10),
-                      MenuButton(titel: "Sweets"),
-                      const SizedBox(width: 10),
-                      MenuButton(titel: "Drinks"),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 20),
-                SizedBox(child: BurgerCard()),
-              ],
-            ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        padding: const EdgeInsets.only(top: 70),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("lib/assets/hintergruende/bg_mainscreen.png"),
+            fit: BoxFit.cover,
           ),
-
-          // Positioned burger image at the top
-          Positioned(
-            top: 300,
-            left: 190,
-            child: Image.asset(
-              'lib/assets/grafiken/burger.png',
-              width: 250, // Adjust size if needed
-            ),
-          ),
-          SizedBox(height: 12),
-          Row(
+        ),
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              SizedBox(
-                height: 100,
-                width: 100, // Add width constraint!
-                child: ListView(
-                  children: [Text("AA",style: TextStyle(color: Colors.white),), Text("BB"), Text("CC")],
+              const Text(
+                "Choose Your Favorite Snack",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
                 ),
+              ),
+              const SizedBox(height: 20),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 100,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 25,
+                          vertical: 22,
+                        ),
+                        children: <Widget>[
+                          CategorieMenuButton(titel: "All categories"),
+                          SizedBox(width: 10),
+                          MenuButton(titel: "Sallty"),
+                          SizedBox(width: 10),
+                          MenuButton(titel: "Sweets"),
+                          SizedBox(width: 10),
+                          MenuButton(titel: "Drinks"),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 360,
+                    height: 300,
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+
+                        Positioned.fill(child: BurgerCard()),
+
+                        Positioned(
+                          top: 60,
+                          left: 160,
+                          child: Image.asset(
+                            'lib/assets/grafiken/burger.png',
+                            width: 230,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+
+              Row(
+                children: [
+                  Text(
+                    "We Recomended",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 100,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text("AA", style: TextStyle(color: Colors.white)),
+                        Text("BB", style: TextStyle(color: Colors.white)),
+                        Text("CC", style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-
-        ],
+        ),
       ),
     );
   }
