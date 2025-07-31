@@ -10,7 +10,6 @@ class BurgerCard extends StatelessWidget {
       width: 400,
       child: Stack(
         children: [
-
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -38,12 +37,24 @@ class BurgerCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text("Delish vegan burger that test like heaven", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400)),
+                    Text(
+                      "Delish vegan burger that test like heaven",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
                     SizedBox(height: 25),
-                    Text("A 13.99", style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
+                    Text(
+                      "A 13.99",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     SizedBox(height: 60),
                     OrderButton(titel: "Add to cart"),
-
                   ],
                 ),
 
@@ -55,10 +66,7 @@ class BurgerCard extends StatelessWidget {
                       children: [
                         Icon(Icons.star, color: Colors.yellowAccent),
                         SizedBox(width: 4),
-                        Text(
-                          "4.8",
-                          style: TextStyle(color: Colors.white),
-                        ),
+                        Text("4.8", style: TextStyle(color: Colors.white)),
                       ],
                     ),
                   ],

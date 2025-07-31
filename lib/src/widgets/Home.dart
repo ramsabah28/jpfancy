@@ -50,8 +50,14 @@ class Home extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            SizedBox(
-                child: BurgerCard(),
+            SizedBox(child: BurgerCard()),
+            Stack(
+              children: [
+                Positioned(
+                  top: 0,
+                  child: Image.asset('lib/assets/grafiken/burger.png'),
+                ),
+              ],
             ),
           ],
         ),
