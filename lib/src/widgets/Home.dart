@@ -3,9 +3,21 @@ import '../domain/MenuButton.dart';
 import '../domain/CategorieMenuButton.dart';
 import '../domain/BurgerCard.dart';
 import '../domain/SweetsCard.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
+import '../data/SweetItemsModel.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+   Home({super.key});
+
+   List<SweetsCard> sweets = [];
+
+  @override
+  void initState() {
+    SweetsItem.fetchSweetsCards().then((loadedCards) {
+      sweets = loadedCards;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +125,7 @@ class Home extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(15.0),
-                            child: SweetsCard(),
+                            child: sweets[0],
                           );
                         },
                       ),
@@ -121,7 +133,6 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
-
             ],
           ),
         ),

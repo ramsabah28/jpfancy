@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Mogle's Cup",
+    "description": "Strawberry ice cream",
+    "price": 99.9,
+    "likes": 200,
+    "imagePath": "lib/assets/grafiken/cupcake_chick.png"
+  },
+  {
+    "name": "Mogle's Cup",
+    "description": "Strawberry ice cream",
+    "price": 99.9,
+    "likes": 200,
+    "imagePath": "lib/assets/grafiken/cupcake_chick.png"
+  },
+  {
+    "name": "Mogle's Cup",
+    "description": "Strawberry ice cream",
+    "price": 99.9,
+    "likes": 200,
+    "imagePath": "lib/assets/grafiken/cupcake_chick.png"
+  },
+  {
+    "name": "Mogle's Cup",
+    "description": "Strawberry ice cream",
+    "price": 99.9,
+    "likes": 200,
+    "imagePath": "lib/assets/grafiken/cupcake_chick.png"
+  },
+  {
+    "name": "Mogle's Cup",
+    "description": "Strawberry ice cream",
+    "price": 99.9,
+    "likes": 200,
+    "imagePath": "lib/assets/grafiken/cupcake_chick.png"
+  }
+]
