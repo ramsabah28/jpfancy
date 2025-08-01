@@ -6,6 +6,7 @@ import '../domain/SweetsCard.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import '../data/SweetItemsModel.dart';
+import '../domain/BottomSheet.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -129,7 +130,25 @@ class _HomeState extends State<Home> {
                               itemBuilder: (context, index) {
                                 return Padding(
                                   padding: const EdgeInsets.all(15.0),
-                                  child: snapshot.data![index],
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      final sweetsItem = snapshot.data![index].item;
+
+                                      showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        context: context,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+                                        ),
+                                        builder: (context) => CustomBottomSheet(
+                                          imagePath: sweetsItem.imagePath,
+                                        ),
+                                      );
+                                    },
+
+                                    child: snapshot.data![index],
+                                  ),
                                 );
                               },
                             );
@@ -142,6 +161,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
+
             ],
           ),
         ),
