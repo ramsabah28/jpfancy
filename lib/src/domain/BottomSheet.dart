@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'AmountCounter.dart';
 
 class CustomBottomSheet extends StatefulWidget {
   final String imagePath;
@@ -21,6 +22,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.transparent,
       height: 1200,
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -51,7 +53,6 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 16),
                     child: ClipRRect(
-                      // needed to clip the blur within borderRadius
                       borderRadius: BorderRadius.circular(12),
                       child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
@@ -80,7 +81,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.end,
-                                  // Align to the right
+
                                   children: [
                                     Icon(
                                       Icons.favorite_outline,
@@ -165,7 +166,76 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
             ],
           ),
 
-          SizedBox(height: 50),
+          SizedBox(height: 350),
+          Row(
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 60,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.3),
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        minimumSize: Size(36, 36),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Small',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+
+                  Container(
+                    width: 60,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.3),
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        minimumSize: Size(36, 36),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Medium',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+
+                  Container(
+                    width: 60,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.3),
+                    ),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        minimumSize: Size(36, 36),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Large',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                ],
+              ),
+
+              AmountCounter(),
+            ],
+          ),
         ],
       ),
     );
