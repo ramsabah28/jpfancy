@@ -25,6 +25,18 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconButton(
+                icon: Icon(Icons.close, size: 30, color: Colors.grey.shade50),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+
           Stack(
             clipBehavior: Clip.none,
             children: [
@@ -98,7 +110,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                 textAlign: TextAlign.center,
                               ),
                               Text(
-                                widget.price.toString() +" €",
+                                widget.price.toString() + " €",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
