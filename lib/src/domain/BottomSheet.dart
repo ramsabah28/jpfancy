@@ -6,12 +6,14 @@ class CustomBottomSheet extends StatefulWidget {
   final String imagePath;
   final String name;
   final double price;
+  final int like;
 
   const CustomBottomSheet({
     super.key,
     required this.imagePath,
     required this.name,
     required this.price,
+    required this.like,
   });
 
   @override
@@ -90,7 +92,8 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                     ),
                                     SizedBox(width: 6),
                                     Text(
-                                      "200",
+                                      widget.like.toString(),
+
                                       style: TextStyle(color: Colors.white),
                                     ),
                                   ],

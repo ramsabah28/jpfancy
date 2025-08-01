@@ -2,36 +2,36 @@
   {
     "name": "Mogle's Cup",
     "description": "Strawberry ice cream",
-    "price": 99.9,
+    "price": 3.00,
     "likes": 200,
     "imagePath": "lib/assets/grafiken/cupkake_cat.png"
   },
   {
-    "name": "Mogle's Cup",
-    "description": "Strawberry ice cream",
-    "price": 99.9,
-    "likes": 200,
+    "name": "Mogle's Chocolate Cup",
+    "description": "Strawberry Chocolate ice cream",
+    "price": 3.00,
+    "likes": 412,
     "imagePath": "lib/assets/grafiken/cupcake_chick.png"
   },
   {
-    "name": "Mogle's Cup",
-    "description": "Strawberry ice cream",
-    "price": 99.9,
-    "likes": 200,
+    "name": "Balu's Cup",
+    "description": "Pistachio ice cream",
+    "price": 4.00,
+    "likes": 600,
     "imagePath": "lib/assets/grafiken/icecream.png"
   },
   {
-    "name": "Mogle's Cup",
-    "description": "Strawberry ice cream",
-    "price": 99.9,
-    "likes": 200,
+    "name": "Kai in a Cone",
+    "description": "Vanilla ice cream",
+    "price": 2.80,
+    "likes": 154,
     "imagePath": "lib/assets/grafiken/icecream_cone.png"
   },
   {
-    "name": "Mogle's Cup",
-    "description": "Strawberry ice cream",
-    "price": 99.9,
-    "likes": 200,
+    "name": "Smiling David",
+    "description": "Coffee ice cream",
+    "price": 1.40,
+    "likes": 320,
     "imagePath": "lib/assets/grafiken/icecream_stick.png"
   }
 ]

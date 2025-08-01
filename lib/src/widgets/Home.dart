@@ -143,7 +143,7 @@ class _HomeState extends State<Home> {
                                           borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
                                         ),
                                         builder: (context) => CustomBottomSheet(
-                                          imagePath: sweetsItem.imagePath,name: sweetsItem.name, price: sweetsItem.price,
+                                          imagePath: sweetsItem.imagePath,name: sweetsItem.name, price: sweetsItem.price, like: sweetsItem.like,
                                         ),
                                       );
                                     },

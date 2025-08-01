@@ -19,7 +19,7 @@ class _SweetCard extends State<SweetsCard> {
       color: Colors.transparent,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(40),
-        side: BorderSide(color: Colors.white, width: 2),
+        side: BorderSide(color: Colors.grey, width: 1),
       ),
       child: Container(
         width: 250,
@@ -54,7 +54,7 @@ class _SweetCard extends State<SweetsCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('\$${item.price.toStringAsFixed(2)}'),
+                Text('\€${item.price.toStringAsFixed(2)}'),
                 Text('${item.like} likes'),
               ],
             ),
