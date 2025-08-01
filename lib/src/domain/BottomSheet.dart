@@ -3,8 +3,13 @@ import 'dart:ui';
 
 class CustomBottomSheet extends StatefulWidget {
   final String imagePath;
+  final String name;
 
-  const CustomBottomSheet({super.key, required this.imagePath});
+  const CustomBottomSheet({
+    super.key,
+    required this.imagePath,
+    required this.name,
+  });
 
   @override
   State<CustomBottomSheet> createState() => _CustomBottomSheetState();
@@ -52,10 +57,88 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                               ),
                             ],
                           ),
-                          alignment: Alignment.center,
                           child: Column(
                             children: [
-                              Text("Mogls'Cup", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),)
+                              Container(
+                                width: double.infinity,
+                                alignment: Alignment.centerRight,
+                                margin: const EdgeInsets.only(right: 16),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  // Align to the right
+                                  children: [
+                                    Icon(
+                                      Icons.favorite_outline,
+                                      color: Colors.grey.shade50,
+                                      size: 20,
+                                    ),
+                                    SizedBox(width: 6),
+                                    Text(
+                                      "200",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              Text(
+                                widget.name,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'Lorem ipsum dolor sit amet consectetur. Non feugiat imperdiet a vel sit at amet. Mi accumsan feugiat magna aliquam feugiat ac et. Pulvinar hendrerit id arcu at sed etiam semper mi hendrerit. Id aliquet quis quam.',
+                                style: TextStyle(color: Colors.grey.shade50),
+                              ),
+                              Text(
+                                "Price",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 33,
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(bottom: 30),
+                                child: Divider(
+                                  indent: 35,
+                                  endIndent: 35,
+                                  color: Colors.grey.shade50,
+                                ),
+                              ),
+
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(left: 50),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Ingrediants",
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 50),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Reviews",
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
