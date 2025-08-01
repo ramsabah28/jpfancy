@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jpfancy/src/domain/OrderButton.dart';
 import 'dart:ui';
 import 'AmountCounter.dart';
 
@@ -237,9 +238,12 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
               ),
 
               AmountCounter(),
+
+
             ],
           ),
-        ],
+          SizedBox(height: 16,),
+          Container(child: OrderButton(titel: "Add the order for " + widget.price.toString() + "€")),],
       ),
     );
   }

@@ -7,8 +7,11 @@ class OrderButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext con) {
-    return SizedBox(
-      width: 140,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minWidth: 0,
+        maxWidth:double.infinity,
+      ),
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
@@ -30,16 +33,11 @@ class OrderButton extends StatelessWidget {
             ),
           ),
           child: Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 16,
-            ),
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             alignment: Alignment.center,
             child: Text(
               titel,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-              ),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
 
             decoration: BoxDecoration(
