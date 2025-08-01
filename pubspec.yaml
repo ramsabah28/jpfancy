@@ -55,6 +55,7 @@ flutter:
     - lib/assets/details/
     - lib/assets/grafiken/
     - lib/assets/hintergruende/
+    - lib/src/data/sweets_card_data.json
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

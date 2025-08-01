@@ -7,18 +7,14 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import '../data/SweetItemsModel.dart';
 
-class Home extends StatelessWidget {
-   Home({super.key});
-
-   List<SweetsCard> sweets = [];
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  void initState() {
-    SweetsItem.fetchSweetsCards().then((loadedCards) {
-      sweets = loadedCards;
-    });
-  }
+  State<Home> createState() => _HomeState();
+}
 
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,11 +54,11 @@ class Home extends StatelessWidget {
                         ),
                         children: <Widget>[
                           CategorieMenuButton(titel: "All categories"),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           MenuButton(titel: "Sallty"),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           MenuButton(titel: "Sweets"),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           MenuButton(titel: "Drinks"),
                         ],
                       ),
@@ -119,14 +115,27 @@ class Home extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       height: 350,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: sweets[0],
-                          );
+                      child: FutureBuilder<List<SweetsCard>>(
+                        future: SweetsItem.fetchSweetsCards(),
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState == ConnectionState.waiting) {
+                            return const Center(child: CircularProgressIndicator());
+                          } else if (snapshot.hasError) {
+                            return Center(child: Text('Error: ${snapshot.error}'));
+                          } else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                            return ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: snapshot.data!.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: snapshot.data![index],
+                                );
+                              },
+                            );
+                          } else {
+                            return const Center(child: Text('No data available'));
+                          }
                         },
                       ),
                     ),

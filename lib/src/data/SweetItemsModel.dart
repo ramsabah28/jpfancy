@@ -28,7 +28,7 @@ class SweetsItem {
   }
 
  static Future<List<SweetsCard>> fetchSweetsCards() async {
-    final String response = await rootBundle.loadString("lib/data/sweets_card_data.json");
+    final String response = await rootBundle.loadString("lib/src/data/sweets_card_data.json");
     final List<dynamic> data = json.decode(response);
 
     List<SweetsItem> items = data.map((json) => SweetsItem.fromJson(json)).toList();
