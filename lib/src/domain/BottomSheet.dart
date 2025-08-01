@@ -4,11 +4,13 @@ import 'dart:ui';
 class CustomBottomSheet extends StatefulWidget {
   final String imagePath;
   final String name;
+  final double price;
 
   const CustomBottomSheet({
     super.key,
     required this.imagePath,
     required this.name,
+    required this.price,
   });
 
   @override
@@ -93,9 +95,10 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                               Text(
                                 'Lorem ipsum dolor sit amet consectetur. Non feugiat imperdiet a vel sit at amet. Mi accumsan feugiat magna aliquam feugiat ac et. Pulvinar hendrerit id arcu at sed etiam semper mi hendrerit. Id aliquet quis quam.',
                                 style: TextStyle(color: Colors.grey.shade50),
+                                textAlign: TextAlign.center,
                               ),
                               Text(
-                                "Price",
+                                widget.price.toString() +" €",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
