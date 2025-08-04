@@ -41,12 +41,10 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
               ),
             ],
           ),
-
           Stack(
             clipBehavior: Clip.none,
             children: [
               Image.asset(widget.imagePath),
-
               Positioned(
                 left: 0,
                 right: 0,
@@ -199,7 +197,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                     width: 60,
                     height: 36,
                     decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.3),
+                      color: Colors.grey.withAlpha(223),
                     ),
                     child: TextButton(
                       style: TextButton.styleFrom(
